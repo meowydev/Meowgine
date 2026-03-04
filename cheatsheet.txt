@@ -1,0 +1,61 @@
+RUN / DEBUG
+F5 Start Debugging
+Ctrl+F5 Run Without Debugger
+Shift+F5 Stop Debugging
+Ctrl+Shift+F5 Restart Debugging
+F9 Toggle Breakpoint
+Ctrl+F9 Enable/Disable Breakpoint
+F10 Step Over
+F11 Step Into
+Shift+F11 Step Out
+Ctrl+Alt+U Output Window
+
+Navigation
+
+Alt+G Go to Implementation
+Shift+Alt+G Go to Related
+Alt+M List Methods
+Alt+O Open Corresponding File
+Shift+Alt+O Open File in Solution
+Shift+Alt+S Find Symbol in Solution
+Shift+Alt+F Find References
+Alt+← Navigate Back
+Alt+→ Navigate Forward
+
+Refactoring / Code Generation
+
+Shift+Alt+Q Quick Action Menu
+Shift+Alt+R Rename
+Shift+Alt+F Refactor (context menu)
+Shift+Alt+C Change Signature
+Shift+Alt+M Move Implementation
+Shift+Alt+I Create Implementation
+Shift+Alt+D Create Declaration
+Shift+Alt+E Encapsulate Field
+
+Selection / Editing
+
+Shift+Alt+→ Extend Selection
+Shift+Alt+← Shrink Selection
+Alt+Shift+W Select Word
+Alt+Shift+E Select Block
+Alt+Shift+C Insert Comment Block
+
+Search / Navigation Tools
+
+Alt+Shift+L List Local Symbols
+Alt+Shift+P List Symbols in Project
+Alt+Shift+T List Symbols in Solution
+Alt+Shift+F Find Symbol (dialog)
+
+Alt+. VA Context Menu
+Alt+Shift+Q VA Options
+Alt+Shift+H Toggle VA Outline
+Alt+Shift+U Toggle Underlining
+Alt+Shift+K Toggle Enhanced Syntax Coloring
+
+COLUMN SELECTION (pure keyboard)
+Shift+Alt+Up Extend column upward
+Shift+Alt+Down Extend column downward
+Shift+Alt+Left Extend column left
+Shift+Alt+Right Extend column right

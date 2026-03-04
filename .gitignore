@@ -1,0 +1,12 @@
+# Ignore IntelliSense cache
+.vs/**/ipch/
+
+# Ignore temporary VS files
+.vs/**/FileContentIndex/
+.vs/**/Browse.VC.db
+.vs/**/Browse.VC.opendb
+.vs/**/.suo
+
+# Ignore build output
+bin/
+bin-int/
