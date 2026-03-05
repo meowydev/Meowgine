@@ -1,10 +1,10 @@
+
 #include "mgpch.h"
 #include "WindowsWindow.h"
 #include "Meowgine/Events/ApplicationEvent.h"
 #include "Meowgine/Events/MouseEvent.h"
 #include "Meowgine/Events/KeyEvent.h"
-#include <glad/glad.h>
-#include "GLFW/glfw3.h"
+#include "Platform/OpenGL/OpenGLContext.h"
 
 namespace Meowgine
 {
@@ -46,12 +46,9 @@ namespace Meowgine
 		}
 
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
+		m_Context = new OpenGLContext(m_Window);
+		m_Context->Init();
 
-		m_Context;
-
-		glfwMakeContextCurrent(m_Window);
-		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-		MG_CORE_ASSERT(status, "Failed to load GLAD");
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
 
@@ -152,8 +149,8 @@ namespace Meowgine
 	void WindowsWindow::OnUpdate()
 	{
 		glfwPollEvents();
-		m_Context.SwapBuffers(); 
-		glfwSwapBuffers(m_Window);
+		m_Context->SwapBuffers(); 
+
 	}
 
 	void WindowsWindow::SetVSync(bool enabled)

@@ -158,7 +158,9 @@
     <ClInclude Include="src\Meowgine\LayerStack.h" />
     <ClInclude Include="src\Meowgine\Log.h" />
     <ClInclude Include="src\Meowgine\MouseButtonCodes.h" />
+    <ClInclude Include="src\Meowgine\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\Meowgine\Window.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\mgpch.h" />
@@ -532,6 +534,7 @@
     <ClCompile Include="src\Meowgine\Layer.cpp" />
     <ClCompile Include="src\Meowgine\LayerStack.cpp" />
     <ClCompile Include="src\Meowgine\Log.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\mgpch.cpp">

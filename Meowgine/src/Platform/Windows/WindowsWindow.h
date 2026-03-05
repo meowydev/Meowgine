@@ -3,8 +3,9 @@
 
 #include "mgpch.h"
 #include "Meowgine/Window.h"
+#include "GLFW/glfw3.h"
 
-struct GLFWwindow;
+#include "Meowgine/Renderer/GraphicsContext.h"
 
 namespace Meowgine
 {
@@ -29,6 +30,8 @@ namespace Meowgine
 		virtual void Shutdown();
 	private:
 		GLFWwindow* m_Window;
+
+		GraphicsContext* m_Context;
 
 		struct WindowData
 		{
