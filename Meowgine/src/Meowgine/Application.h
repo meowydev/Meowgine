@@ -7,6 +7,8 @@
 #include "Meowgine/LayerStack.h"
 #include "Meowgine/ImGui/ImGuiLayer.h"
 
+#include "Meowgine/Renderer/Shader.h"
+
 namespace Meowgine {
 	class MG_API Application
 	{
@@ -34,6 +36,7 @@ namespace Meowgine {
 		static Application* s_Instance;
 
 		unsigned int m_VertexArray, m_VertexBuffer, m_IndexBuffer;
+		std::unique_ptr<Shader> m_Shader;
 	};
 
 	//Client should define this
