@@ -11,6 +11,20 @@
 #include "GLFW/glfw3.h"
 #include "glad/glad.h"
 
+//Customs
+
+namespace ImGui
+{
+	void GLVen()
+	{
+		const char* venPtr = (const char*)glGetString(GL_VENDOR);
+		const char* renPtr = (const char*)glGetString(GL_RENDERER);
+		const std::string fullString = std::string(venPtr) + " " + renPtr;
+		ImGui::Text("%s", fullString.c_str());
+	}
+
+}
+
 namespace Meowgine
 {
 	// #ImGuiEvents
