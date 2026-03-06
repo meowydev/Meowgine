@@ -1,7 +1,7 @@
 # Meowgine ShadowPaw
 
-![Meowgine](https://img.shields.io/badge/Meowgine-beta-orange)
-![Discord](https://discord.gg/bwnZ8JBWmG)
+![Meowgine](https://img.shields.io/badge/Meowgine-ShadowPaw-blue)
+Our discord:https://discord.gg/bwnZ8JBWmG
 
 ## Overview
 

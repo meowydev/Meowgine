@@ -19,6 +19,7 @@ public:
 	{
 		ImGui::Begin("Test");
 		ImGui::Text("hi");
+		ImGui::GLVen();
 		ImGui::End();
 	}
 
