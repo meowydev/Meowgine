@@ -1,6 +1,6 @@
 #pragma once
 
-// #MGMouseButtonCodes #KeyCodes
+// #KeyCodes
 // Copied from GLFW (glfw3.h)
 // 
 

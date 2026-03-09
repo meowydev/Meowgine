@@ -1,6 +1,6 @@
 #pragma once
 
-// #MGKeyCodes #KeyCodes
+// #KeyCodes
 // Copied from GLFW (glfw3.h)
 // 
 
