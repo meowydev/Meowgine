@@ -13,8 +13,14 @@
     <Filter Include="src\Meowgine\ImGui">
       <UniqueIdentifier>{41910E82-2D75-CFD7-96D5-C92A82D8B959}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Meowgine\Renderer">
+      <UniqueIdentifier>{5D7C387F-C9E8-F379-92DC-8BD7FE0716E2}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Platform">
       <UniqueIdentifier>{21CA02E5-0D2D-9289-B6B2-CA3FA2F45D0C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Platform\OpenGL">
+      <UniqueIdentifier>{35A49437-A105-7245-2A73-B8F796D3A804}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\Platform\Windows">
       <UniqueIdentifier>{5B054582-4794-CE4B-F0B2-E246DC20DFF1}</UniqueIdentifier>
@@ -87,8 +93,26 @@
     <ClInclude Include="src\Meowgine\MouseButtonCodes.h">
       <Filter>src\Meowgine</Filter>
     </ClInclude>
+    <ClInclude Include="src\Meowgine\Renderer\Buffer.h">
+      <Filter>src\Meowgine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Meowgine\Renderer\GraphicsContext.h">
+      <Filter>src\Meowgine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Meowgine\Renderer\Renderer.h">
+      <Filter>src\Meowgine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Meowgine\Renderer\Shader.h">
+      <Filter>src\Meowgine\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="src\Meowgine\Window.h">
       <Filter>src\Meowgine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h">
+      <Filter>src\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsInput.h">
       <Filter>src\Platform\Windows</Filter>
@@ -1185,9 +1209,6 @@
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp">
       <Filter>vendor\glm\glm</Filter>
     </ClInclude>
-    <ClInclude Include="src\Meowgine\Renderer\GraphicsContext.h" />
-    <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
-    <ClInclude Include="src\Meowgine\Renderer\Shader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Meowgine\Application.cpp">
@@ -1208,6 +1229,21 @@
     <ClCompile Include="src\Meowgine\Log.cpp">
       <Filter>src\Meowgine</Filter>
     </ClCompile>
+    <ClCompile Include="src\Meowgine\Renderer\Buffer.cpp">
+      <Filter>src\Meowgine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Meowgine\Renderer\Renderer.cpp">
+      <Filter>src\Meowgine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Meowgine\Renderer\Shader.cpp">
+      <Filter>src\Meowgine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
       <Filter>src\Platform\Windows</Filter>
     </ClCompile>
@@ -1220,7 +1256,5 @@
     <ClCompile Include="vendor\glm\glm\detail\glm.cpp">
       <Filter>vendor\glm\glm\detail</Filter>
     </ClCompile>
-    <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
-    <ClCompile Include="src\Meowgine\Renderer\Shader.cpp" />
   </ItemGroup>
 </Project>
