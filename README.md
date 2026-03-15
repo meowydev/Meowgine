@@ -13,37 +13,33 @@ Mikkomaggiemore - Designer
 
 ## Overview
 
-`Meowgine` is a game engine developed following The Cherno's guide. It's currently in **beta** and focuses on being a compact, learnable engine for experimenting with core systems, rendering, and gameplay architecture.
+`Meowgine` is a game engine built using The Cherno’s Game Engine Series. It is simply a game engine for developing games.
 
 ## Versioning
 
-**Format:** `(major.bigupdate.update)`
+**Format:** `(major.update)`
 
-| Component   | Range | Description |
-|---|---:|---|
-| `major`     | 1+   | Codename "era" of the engine (increments when the codename changes) |
-| `bigupdate` | 0–10 | Large feature drops or major internal changes |
-| `update`    | 0–10 | Regular fixes, small improvements, and iterative progress |
+| Component | Description |
+|---|---|
+| `major`  | Codename "era" of the engine (increments when the codename changes) |
+| `update` | Engine updates such as new features, improvements, fixes, and general progress |
 
 **Examples:**
 
 ```text
-1.0.0   -> Meowgine Whisker initial release in major 1
-1.10.10 -> Major 1, bigupdate 10, update 10 (valid maximum)
-2.0.0   -> Meowgine ShadowPaw (major 2, new codename/era)
+1.0 -> Meowgine Whisker initial release in major 1
+1.3 -> Major 1 with several updates
+2.0 -> Meowgine ShadowPaw (major 2, new codename/era)
 ```
 
 **Rules:**
 
-- When the codename (major) changes, `bigupdate` and `update` reset to `0`.
-- When `bigupdate` increases within the same `major`, `update` resets to `0`.
-- Maximum values: `bigupdate` = `10`, `update` = `10`.
+- When the codename (`major`) changes, `update` resets to `0`.
 
 ## Codenames
 
 - Example: Meowgine Whisker = major `1`
 - Example: Meowgine ShadowPaw = major `2`
-
 ## Contributing
 
 If you'd like to help, please open issues and pull requests. See the repository for contribution guidelines.
