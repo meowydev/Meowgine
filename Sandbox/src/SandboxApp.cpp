@@ -21,12 +21,6 @@ public:
 		ImGui::Text("hi");
 		ImGui::GLVen();
 		ImGui::End();
-
-		ImGui::Begin("Another testing window");
-		if (ImGui::Button("Click Me")) {
-			ImGui::OpenPopup("helo");
-		}
-		ImGui::End();
 	}
 
 	void OnEvent(Meowgine::Event& event) override

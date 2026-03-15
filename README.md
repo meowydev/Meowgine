@@ -9,7 +9,6 @@ The Cherno - Game Engine Series
 ## Meowerity Meowgine Team:
 
 Meowy - Game Engine developer
-Mikkomaggiemore - Designer
 
 ## Overview
 

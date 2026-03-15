@@ -2,6 +2,24 @@
 
 namespace Meowgine
 {
+	struct BufferElements
+	{
+		std::string name;
+
+		ShaderDataType type;
+
+		uint32_t offset;
+		uint32_t size;
+	};
+
+	class BufferLayout
+	{
+	public:
+		inline const std::vector<BufferElements>& GetElements() const { return m_Elements; }
+	private:
+		std::vector<BufferElements> m_Elements;
+	};
+
 	class VertexBuffer
 	{
 	public:
