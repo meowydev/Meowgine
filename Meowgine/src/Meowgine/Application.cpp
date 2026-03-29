@@ -28,13 +28,18 @@ namespace Meowgine {
 		m_VertexBuffer.reset(VertexBuffer::Create(verticies, sizeof(verticies)));
 		
 		BufferLayout layout = {
-			{ ShaderDataType::Vec3, "a_Position" }
+			{ ShaderDataType::Float3, "a_Position" }
 		};
 
-		m_VertexBuffer->SetLayout(layout);
+		uint32_t index = 0;
+
+		for (const auto& element : layout) {
+			glEnableVertexAttribArray(index);
+			glVertexAttribPointer(index, element.GetComponentCount(), GL_FLOAT, GL_FALSE, 3 * sizeof(float), nullptr);
+			index++;
+		}
+
 		
-		glEnableVertexAttribArray(0);
-		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE,3 * sizeof(float),nullptr);
 
 		unsigned int indices[3] = {
 			0,1,2
