@@ -7,26 +7,6 @@
 namespace Meowgine {
 #define BIND_EVENT_FUNC(x) std::bind(&Application::x, this, std::placeholders::_1)
 	Application* Application::s_Instance = nullptr;
-	static GLenum ShaderDataTypeToOpenGLBaseType(ShaderDataType type) {
-		switch (type)
-		{
-			case Meowgine::ShaderDataType::Float:	return GL_FLOAT;
-			case Meowgine::ShaderDataType::Float2:	return GL_FLOAT;
-			case Meowgine::ShaderDataType::Float3:	return GL_FLOAT;
-			case Meowgine::ShaderDataType::Float4:	return GL_FLOAT;
-			case Meowgine::ShaderDataType::Mat3:	return GL_FLOAT;
-			case Meowgine::ShaderDataType::Mat4:	return GL_FLOAT;
-			case Meowgine::ShaderDataType::Int:		return GL_INT;
-			case Meowgine::ShaderDataType::Int2:	return GL_INT;
-			case Meowgine::ShaderDataType::Int3:	return GL_INT;
-			case Meowgine::ShaderDataType::Int4:	return GL_INT;
-			case Meowgine::ShaderDataType::Bool:	return GL_BOOL;
-		}
-		// crash the shit out of it if it was used wrong
-		MG_CORE_ASSERT(false, "Unknown ShaderDataType!");
-		return 0;
-
-	}
 	Application::Application() {
 		MG_CORE_ASSERT(!s_Instance, "Application already exists");
 		s_Instance = this;
@@ -34,10 +14,9 @@ namespace Meowgine {
 		m_Window->SetEventCallback(BIND_EVENT_FUNC(OnEvent));
 
 		m_ImGuiLayer = new ImGuiLayer();
-		PushOverlay(m_ImGuiLayer);
-		
-		glGenVertexArrays(1, &m_VertexArray);
-		glBindVertexArray(m_VertexArray);
+		PushOverlay(m_ImGuiLayer); 
+
+		m_VertexArray.reset(VertexArray::Create());
 
 		float verticies[3 * 7] = {
 			//X     Y     Z     R     G     B     A
@@ -57,18 +36,8 @@ namespace Meowgine {
 			m_VertexBuffer->SetLayout(layout);
 		}
 
-		uint32_t index = 0;
-		const auto& layout = m_VertexBuffer->GetLayout();
-		for (const auto& element : layout) {
-			glEnableVertexAttribArray(index);
-			glVertexAttribPointer(index, element.GetComponentCount(),
-				ShaderDataTypeToOpenGLBaseType(element.Type),
-				element.Normalized ? GL_TRUE : GL_FALSE,
-				layout.GetStride(),
-				(const void*)element.Offset);
-			index++;
-		}
-		
+		m_VertexArray->AddVertexBuffer(m_VertexBuffer);
+		m_VertexArray->AddIndexBuffer(m_IndexBuffer);
 
 		unsigned int indices[3] = {
 			0,1,2
@@ -148,7 +117,6 @@ namespace Meowgine {
 			glClearColor(0.1f, 0.1f, 0.1f, 1);
 			glClear(GL_COLOR_BUFFER_BIT);
 			m_Shader->Bind();
-			glBindVertexArray(m_VertexArray);
 			glDrawElements(GL_TRIANGLES, m_IndexBuffer->GetCount(), GL_UNSIGNED_INT, nullptr);
 
 			for (Layer* layer : m_LayerStack)
