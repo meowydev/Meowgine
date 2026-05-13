@@ -25,24 +25,50 @@ namespace Meowgine {
 			 0.0f,	0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f  // Top
 		};
 
-		m_VertexBuffer.reset(VertexBuffer::Create(verticies, sizeof(verticies)));
-		
-		{
-			BufferLayout layout = {
-				{ ShaderDataType::Float3, "a_Position"},
-				{ ShaderDataType::Float4, "a_Color"}
-			};
 
-			m_VertexBuffer->SetLayout(layout);
-		}
+		std::shared_ptr<VertexBuffer> vertexBuffer;
+		vertexBuffer.reset(VertexBuffer::Create(verticies, sizeof(verticies)));
+		BufferLayout layout = {
+			{ ShaderDataType::Float3, "a_Position"},
+			{ ShaderDataType::Float4, "a_Color"}
+		};
 
-		m_VertexArray->AddVertexBuffer(m_VertexBuffer);
-		m_VertexArray->AddIndexBuffer(m_IndexBuffer);
+		vertexBuffer->SetLayout(layout);
+		m_VertexArray->AddVertexBuffer(vertexBuffer);
 
 		unsigned int indices[3] = {
 			0,1,2
 		};
-		m_IndexBuffer.reset(IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
+		std::shared_ptr<IndexBuffer> indexBuffer;
+
+		indexBuffer.reset(IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
+		m_VertexArray->SetIndexBuffer(indexBuffer);
+
+		m_SquareVA.reset(VertexArray::Create());
+
+		float squareVerticies[3 * 4] = {
+			//X     Y     Z    
+			-0.5f, -0.5f, 0.0f,
+			 0.5f, -0.5f, 0.0f,
+			 0.5f,	0.5f, 0.0f,
+			 -0.5f,	0.5f, 0.0f
+		};
+
+		std::shared_ptr<VertexBuffer> m_SquareVB;
+		m_SquareVB.reset(VertexBuffer::Create(squareVerticies, sizeof(squareVerticies)));
+
+		m_SquareVB->SetLayout({
+			{ ShaderDataType::Float3, "a_Position"}
+		});
+		m_SquareVA->AddVertexBuffer(m_SquareVB);
+
+
+		unsigned int SquareIndices[6] = {
+			0,1,2,2,3,0
+		};
+		std::shared_ptr<IndexBuffer> m_SquareIB;
+		m_SquareIB.reset(IndexBuffer::Create(SquareIndices, sizeof(SquareIndices) / sizeof(uint32_t)));
+		m_SquareVA->SetIndexBuffer(m_SquareIB);
 
 		std::string vertexSrc = R"(
 		#version 330 core
@@ -80,6 +106,38 @@ namespace Meowgine {
 		)";
 
 		m_Shader.reset(new Shader(vertexSrc,fragmentSrc));
+
+		std::string BlueShaderVertexSrc = R"(
+		#version 330 core
+		
+		layout(location = 0) in vec3 a_Position;
+		
+		
+		out vec3 v_Position;
+		
+		void main()
+		{
+			v_Position = a_Position;
+			gl_Position = vec4(a_Position,1.0);
+		}
+		
+		)";
+
+		std::string BlueShaderFragmentSrc = R"(
+		#version 330 core
+		
+		layout(location = 0) out vec4 color;
+		
+		in vec3 v_Position;
+		
+		void main()
+		{
+			color = vec4(0.2,0.3,0.8,1.0);
+		}
+		
+		)";
+
+		m_BlueShader.reset(new Shader(BlueShaderVertexSrc, BlueShaderFragmentSrc));
 	}
 
 	Application::~Application() {
@@ -116,8 +174,14 @@ namespace Meowgine {
 		{
 			glClearColor(0.1f, 0.1f, 0.1f, 1);
 			glClear(GL_COLOR_BUFFER_BIT);
+
+			m_BlueShader->Bind();
+			m_SquareVA->Bind();
+			glDrawElements(GL_TRIANGLES, m_SquareVA->GetIndexBuffer()->GetCount(), GL_UNSIGNED_INT, nullptr);
+
 			m_Shader->Bind();
-			glDrawElements(GL_TRIANGLES, m_IndexBuffer->GetCount(), GL_UNSIGNED_INT, nullptr);
+			m_VertexArray->Bind();
+			glDrawElements(GL_TRIANGLES, m_VertexArray->GetIndexBuffer()->GetCount(), GL_UNSIGNED_INT, nullptr);
 
 			for (Layer* layer : m_LayerStack)
 				layer->OnUpdate();

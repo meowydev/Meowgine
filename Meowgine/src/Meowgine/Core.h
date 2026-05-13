@@ -13,6 +13,7 @@
 #endif
 #else
 #error Meowgine right now is only on windows.
+// #error Meowgine right now is only on windows, because i already hate my life
 #endif
 
 #ifdef MG_DEBUG

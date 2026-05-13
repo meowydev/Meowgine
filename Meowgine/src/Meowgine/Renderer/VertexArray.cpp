@@ -1,6 +1,7 @@
 #include "mgpch.h"
 #include "VertexArray.h"
 #include "Renderer.h"
+#include "Platform/OpenGL/OpenGLVertexArray.h"
 
 namespace Meowgine {
 
@@ -9,7 +10,7 @@ namespace Meowgine {
 
 	}
 
-	void VertexArray::AddIndexBuffer(const std::shared_ptr<IndexBuffer>& indexBuffer)
+	void VertexArray::SetIndexBuffer(const std::shared_ptr<IndexBuffer>& indexBuffer)
 	{
 
 	}

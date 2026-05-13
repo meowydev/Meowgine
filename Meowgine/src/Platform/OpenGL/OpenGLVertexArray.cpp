@@ -32,8 +32,15 @@ namespace Meowgine
 		glCreateVertexArrays(1, &m_RendererID);
 	}
 
+
+	OpenGLVertexArray::~OpenGLVertexArray() {
+		glDeleteVertexArrays(1, &m_RendererID);
+	}
+
 	void OpenGLVertexArray::AddVertexBuffer(const std::shared_ptr<VertexBuffer>& vertexBuffer)
 	{
+		MG_CORE_ASSERT(vertexBuffer->GetLayout().GetElements().size(), "Vertex buffer doesnt have a layout");
+
 		glBindVertexArray(m_RendererID);
 		vertexBuffer->Bind();
 		uint32_t index = 0;

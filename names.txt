@@ -198,8 +198,6 @@ VoidClaw
 
 WhisperNova
 
-(Continuing…)
-
 FrostWhisk
 
 NovaFang
@@ -300,8 +298,6 @@ RavenNova
 
 GlacierNova
 
-(Still going…)
-
 CrimsonClaw
 
 MoonNova
@@ -401,8 +397,6 @@ ShadowEcho
 CosmicEcho
 
 GlacierEcho
-
-(Continuing clean…)
 
 FrostClawX
 

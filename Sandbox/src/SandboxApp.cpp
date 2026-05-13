@@ -18,8 +18,11 @@ public:
 	void OnImGuiRender() override
 	{
 		ImGui::Begin("Test");
-		ImGui::Text("hi");
+		ImGui::Text("GPU info:");
 		ImGui::GLVen();
+		if (ImGui::Button("Click me!")) {
+			MG_INFO("Click me was clicked");
+		}
 		ImGui::End();
 	}
 
