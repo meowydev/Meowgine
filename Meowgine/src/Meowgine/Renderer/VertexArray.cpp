@@ -29,8 +29,8 @@ namespace Meowgine {
 	{
 		switch (Renderer::GetAPI())
 		{
-		case RendererAPI::None: MG_CORE_ASSERT(false, "RendererAPI::None is not allowed"); return nullptr;
-		case RendererAPI::OpenGL: return new OpenGLVertexArray();
+		case RendererAPI::API::None: MG_CORE_ASSERT(false, "RendererAPI::None is not allowed"); return nullptr;
+		case RendererAPI::API::OpenGL: return new OpenGLVertexArray();
 		}
 
 		MG_CORE_ASSERT(false, "Unknown RendererAPI");

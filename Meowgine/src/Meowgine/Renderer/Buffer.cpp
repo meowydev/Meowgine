@@ -11,8 +11,8 @@ namespace Meowgine
 	{
 		switch (Renderer::GetAPI())
 		{
-		case RendererAPI::None: MG_CORE_ASSERT(false, "RendererAPI::None is not allowed"); return nullptr;
-		case RendererAPI::OpenGL: return new OpenGLVertexBuffer(vertices, size);
+		case RendererAPI::API::None: MG_CORE_ASSERT(false, "RendererAPI::None is not allowed"); return nullptr;
+		case RendererAPI::API::OpenGL: return new OpenGLVertexBuffer(vertices, size);
 		}
 
 		MG_CORE_ASSERT(false, "Unknown RendererAPI");
@@ -25,8 +25,8 @@ namespace Meowgine
 	{
 		switch (Renderer::GetAPI())
 		{
-		case RendererAPI::None: MG_CORE_ASSERT(false, "RendererAPI::None is not allowed"); return nullptr;
-		case RendererAPI::OpenGL: return new OpenGLIndexBuffer(indices, count);
+		case RendererAPI::API::None: MG_CORE_ASSERT(false, "RendererAPI::None is not allowed"); return nullptr;
+		case RendererAPI::API::OpenGL: return new OpenGLIndexBuffer(indices, count);
 		}
 
 		MG_CORE_ASSERT(false, "Unknown RendererAPI");
