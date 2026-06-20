@@ -18,11 +18,23 @@ public:
 	void OnImGuiRender() override
 	{
 		ImGui::Begin("Test");
+
 		ImGui::Text("GPU info:");
 		ImGui::GLVen();
-		if (ImGui::Button("Click me!")) {
-			MG_INFO("Click me was clicked");
+
+		if (ImGui::Button("Click"))
+			ImGui::OpenPopup("sample text");
+
+		if (ImGui::BeginPopup("sample text"))
+		{
+			ImGui::Text("Hello world");
+
+			if (ImGui::Button("Close"))
+				ImGui::CloseCurrentPopup();
+
+			ImGui::EndPopup();
 		}
+
 		ImGui::End();
 	}
 

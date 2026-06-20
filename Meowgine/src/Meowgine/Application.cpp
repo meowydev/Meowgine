@@ -20,8 +20,8 @@ namespace Meowgine {
 
 		float verticies[3 * 7] = {
 			//X     Y     Z     R     G     B     A
-			-0.5f, -0.5f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f, // Bottom left
-			 0.5f, -0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, // Bottom right
+			-0.5f, -0.5f, 0.0f, 0.1f, 0.5f, 1.0f, 1.0f, // Bottom left
+			 0.5f, -0.5f, 0.0f, 0.0f, 1.2f, 0.1f, 1.0f, // Bottom right
 			 0.0f,	0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f  // Top
 		};
 
