@@ -14,6 +14,12 @@ Meowy - Game Engine developer
 
 `Meowgine` is a game engine built using The Cherno’s Game Engine Series. It is simply a game engine for developing games.
 
+## FAQ
+
+Q: Are you switching to the new AI series?
+
+A: Never.
+
 ## Versioning
 
 **Format:** `(major.update)`
