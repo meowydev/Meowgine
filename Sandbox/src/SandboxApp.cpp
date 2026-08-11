@@ -20,7 +20,7 @@ public:
 		ImGui::Begin("Test");
 
 		ImGui::Text("GPU info:");
-		ImGui::GLVen();
+		ImGui::GLVen(); // Display vendor info
 
 		if (ImGui::Button("Click"))
 			ImGui::OpenPopup("sample text");
