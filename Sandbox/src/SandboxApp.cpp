@@ -24,7 +24,6 @@ public:
 
 		if (ImGui::Button("Click")) {
 			ImGui::OpenPopup("sample text");
-			MG_TRACE("Popup opened");
 		}
 			
 			
