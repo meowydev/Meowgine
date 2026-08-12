@@ -22,8 +22,12 @@ public:
 		ImGui::Text("GPU info:");
 		ImGui::GLVen(); // Display vendor info
 
-		if (ImGui::Button("Click"))
+		if (ImGui::Button("Click")) {
 			ImGui::OpenPopup("sample text");
+			MG_TRACE("Popup opened");
+		}
+			
+			
 
 		if (ImGui::BeginPopup("sample text"))
 		{
