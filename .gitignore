@@ -12,3 +12,5 @@ bin/
 bin-int/
 
 Sandbox/imgui.ini
+.vs/Meowgine/v15/Solution.VC.db-shm
+.vs/Meowgine/v15/Solution.VC.db-wal
