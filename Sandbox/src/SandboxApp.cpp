@@ -49,6 +49,7 @@ public:
 	}
 
 	bool LogMouse(Meowgine::MouseButtonPressedEvent& event) {
+
 		int button = event.GetMouseButton();
 
 		if (button == 1) {

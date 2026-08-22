@@ -23,8 +23,8 @@
 #define MG_ASSERT(x, ...) {if(!(x)) { MG_CLIENT_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak();}}
 #define MG_CORE_ASSERT(x, ...) {if(!(x)) { MG_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak();}}
 #else
-#define MG_ASSERT(x, ...)
-#define MG_CORE_ASSERT(x, ...)
+#define MG_ASSERT(x, ...) 
+#define MG_CORE_ASSERT(x, ...) 
 #endif
 #define BIT(x) (1 << x)
 #define MG_BIND_EVENT(arg) std::bind(&arg,this,std::placeholders::_1)
