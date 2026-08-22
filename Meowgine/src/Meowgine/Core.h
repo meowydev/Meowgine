@@ -1,5 +1,4 @@
 #pragma once
-//HERE IT COMES... THE IMGUI meowgine too
 
 #ifdef MG_WINDOWS
 #if MG_DYN_LINK
@@ -29,3 +28,7 @@
 #endif
 #define BIT(x) (1 << x)
 #define MG_BIND_EVENT(arg) std::bind(&arg,this,std::placeholders::_1)
+
+// Crash Codes
+
+#define MG_EXIT_OPENGLNOT41 1

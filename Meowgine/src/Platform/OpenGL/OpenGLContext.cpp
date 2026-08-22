@@ -19,6 +19,13 @@ namespace Meowgine
 		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 		MG_CORE_ASSERT(status, "Failed to load GLAD");
 
+		bool forceCrashOldGL = false;
+
+		if (forceCrashOldGL || !GLAD_GL_VERSION_4_1) {
+			MG_CORE_ERROR("OpenGL 4.1 isn't supported");
+			std::exit(MG_EXIT_OPENGLNOT41);
+		}
+
 		MG_CORE_INFO("GPU Found:");
 		MG_CORE_INFO("OpenGL Renderer: {0}", glGetString(GL_RENDERER));
 		MG_CORE_INFO("OpenGL Vendor: {0}", glGetString(GL_VENDOR));
