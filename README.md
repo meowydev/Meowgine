@@ -20,6 +20,10 @@ Q: Are you switching to the new AI series?
 
 A: Never.
 
+Q: What major version you expect to be the release?
+
+A: 3.
+
 ## Versioning
 
 **Format:** `(major.update)`
