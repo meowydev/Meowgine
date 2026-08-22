@@ -1,10 +1,10 @@
 #include <Meowgine.h>
 #include <imgui/imgui.h>
 
-class ExampleLayer : public Meowgine::Layer
+class MainLayer : public Meowgine::Layer
 {
 public:
-	ExampleLayer()
+	MainLayer()
 		: Layer("Example")
 	{
 		
@@ -43,15 +43,29 @@ public:
 
 	void OnEvent(Meowgine::Event& event) override
 	{
-		
+		Meowgine::EventDispatcher dispatcher(event);
 
+		dispatcher.Dispatch<Meowgine::MouseButtonPressedEvent>(MG_BIND_EVENT(MainLayer::LogMouse));
+	}
+
+	bool LogMouse(Meowgine::MouseButtonPressedEvent& event) {
+		int button = event.GetMouseButton();
+
+		if (button == 1) {
+			MG_TRACE("Right mouse button pressed");
+		}
+		else {
+			MG_TRACE("Left mouse button pressed");
+		}
+
+		return true;
 	}
 };
 
 class Sandbox : public Meowgine::Application {
 public:
 	Sandbox() {
-		PushLayer(new ExampleLayer());
+		PushLayer(new MainLayer());
 	}
 	
 	~Sandbox() {
