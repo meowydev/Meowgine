@@ -1,7 +1,7 @@
 # Meowgine ShadowPaw
 
 ![Meowgine](https://img.shields.io/badge/Meowgine-ShadowPaw-blue)
-Our discord:https://discord.gg/bwnZ8JBWmG
+
 
 ## Credits
 The Cherno - Game Engine Series
@@ -19,6 +19,10 @@ Meowy - Game Engine developer
 Q: Are you switching to the new AI series?
 
 A: Never.
+
+Q: What major version you expect to be the release?
+
+A: 3.
 
 ## Versioning
 
